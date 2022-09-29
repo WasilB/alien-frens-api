@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { AliensModule } from './aliens/aliens.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { MulterModule } from '@nestjs/platform-express';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    MulterModule.register({ dest: './assets' }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       //host: process.env.POSTGRES_HOST,

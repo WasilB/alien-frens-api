@@ -11,7 +11,7 @@ export class AliensService {
     @InjectRepository(AlienEntity)
     private readonly alienModel: Repository<AlienEntity>,
   ) {}
-  create(createAlienDto: any):Observable<AlienDTO> {
+  create(createAlienDto: any): Observable<AlienDTO> {
     return from(this.alienModel.save(createAlienDto));
   }
 
@@ -23,11 +23,11 @@ export class AliensService {
     return from(this.alienModel.findOneBy({ id: id }));
   }
 
-  update(id: string, updateAlienDto: AlienDTO):Observable<UpdateResult> {
-    return from(this.alienModel.update(id,updateAlienDto);
+  update(id: string, updateAlienDto: AlienDTO): Observable<UpdateResult> {
+    return from(this.alienModel.update(id, updateAlienDto));
   }
 
-  remove(id: string):Observable<DeleteResult> {
+  remove(id: string): Observable<DeleteResult> {
     return from(this.alienModel.delete(id));
   }
 }

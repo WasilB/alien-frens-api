@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, IsNull } from 'typeorm';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 @Entity('Alien')
 export class AlienEntity {
@@ -6,14 +7,17 @@ export class AlienEntity {
   id: string;
 
   @Column()
+  @IsNotEmpty()
   alienName: string;
 
   @Column()
+  @IsNotEmpty()
   alienRole: string;
 
   @Column()
+  @IsNotEmpty()
   alienDescription: string;
 
-  @Column()
+  @Column({ nullable: true })
   alienImagePath: string;
 }
