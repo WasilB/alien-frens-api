@@ -6,10 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MulterModule } from '@nestjs/platform-express';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([AlienEntity]),
-    MulterModule.register({ dest: './assets' }),
-  ],
+  imports: [TypeOrmModule.forFeature([AlienEntity])],
   controllers: [AliensController],
   providers: [AliensService],
 })

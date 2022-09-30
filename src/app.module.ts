@@ -9,7 +9,7 @@ import { MulterModule } from '@nestjs/platform-express';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MulterModule.register({ dest: './assets' }),
+   
     TypeOrmModule.forRoot({
       type: 'postgres',
       //host: process.env.POSTGRES_HOST,

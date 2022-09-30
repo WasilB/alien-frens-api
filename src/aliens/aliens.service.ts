@@ -11,7 +11,7 @@ export class AliensService {
     @InjectRepository(AlienEntity)
     private readonly alienModel: Repository<AlienEntity>,
   ) {}
-  create(createAlienDto: any): Observable<AlienDTO> {
+  create(createAlienDto: any, file): any {
     return from(this.alienModel.save(createAlienDto));
   }
 
